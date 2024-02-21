@@ -1,0 +1,16 @@
+body {
+    min-height: 75rem;
+    padding-top: 4.5rem;
+  }
+
+  h1 {
+      color: #447e9b;
+    }
+
+  h2 {
+      color: #450e9b;
+    }
+
+h3 {
+    color: #ff0000;
+  }
