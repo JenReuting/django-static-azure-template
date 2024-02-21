@@ -4,6 +4,8 @@ This is a template for a basic Django project that uses Azure Storage Containers
 
 ### Notes: 
 
+This project contains a custom User model, as well as some useful base models and mixins.
+
 *Django Storages*: This app uses Django-Storages [docs here](https://django-storages.readthedocs.io/en/latest/) along with the [azure-storage-blob](https://pypi.org/project/azure-storage-blob/) package.
 
 This app does *NOT* use Whitenoise: Since this was developed with the intent to a.) be a backend API, and b.) utilize CloudFront's CDN for image serving, I did NOT add in Whitenoise. That configuration shouldn't be too difficult and, if I get time, I'll create another branch. 
