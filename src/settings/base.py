@@ -113,28 +113,26 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-print("BASE_DIR: ", BASE_DIR)
-print("STATIC_ROOT: ", STATIC_ROOT)
 
+AZURE_ACCOUNT_NAME = os.environ.get('AZURE_STORAGE_ACCOUNT_NAME')
+AZURE_CUSTOM_DOMAIN = os.environ.get("AZURE_STORAGE_CUSTOM_DOMAIN")
+AZURE_ACCOUNT_KEY = os.environ.get('AZURE_STORAGE_ACCOUNT_KEY')
+AZURE_CONNECTION_STRING = os.environ.get('AZURE_STORAGE_CONNECTION_STRING')
+AZURE_CONTAINER = os.environ.get('AZURE_STATIC_CONTAINER')
 
-
-AZURE_ACCOUNT_NAME = os.environ.get('AZURE_ACCOUNT_NAME')
-AZURE_ACCOUNT_KEY = os.environ.get('AZURE_ACCOUNT_KEY')
-AZURE_CONTAINER = os.environ.get('AZURE_CONTAINER')
-AZURE_CONNECTION_STRING = os.environ.get('AZURE_CONNECTION_STRING')
-
-AZURE_CUSTOM_DOMAIN = f'{AZURE_ACCOUNT_NAME}.blob.core.windows.net'
 
 # ################# MEDIA FILES #####################
-AZURE_ACCOUNT_NAME = os.environ.get('AZURE_ACCOUNT_NAME')
+
 AZURE_MEDIA_CONTAINER = os.environ.get('AZURE_MEDIA_CONTAINER')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_FILE_STORAGE = 'core.utils.azure_storages.AzureMediaStorage'
 
-MEDIA_URL = f'https://{AZURE_ACCOUNT_NAME}.blob.core.windows.net/{AZURE_MEDIA_CONTAINER}/'
+MEDIA_URL = (f'https://{AZURE_CUSTOM_DOMAIN}/{AZURE_MEDIA_CONTAINER}/')
 
 
+
+# ################ OTHER ####################
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
@@ -147,12 +145,6 @@ USE_I18N = True
 
 USE_TZ = True
 
-
-# ################ STATIC & MEDIA FILES #################### #
-# https://docs.djangoproject.com/en/4.2/howto/static-files/
-
-# STATIC_URL = os.environ.get("DJANGO_STATIC_URL", "/static/")
-# STATIC_ROOT = os.environ.get("DJANGO_STATIC_ROOT", "./static/")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
