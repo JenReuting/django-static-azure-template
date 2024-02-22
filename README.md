@@ -1,6 +1,5 @@
-# django-static-azure-template
+# django-ckeditor-azure-template
 
-This is a template for a basic Django project that uses Azure Storage Containers for static and media file handling. Read the Docs (within the project files) for more information. 
 
 ### Notes: 
 
@@ -15,3 +14,4 @@ This app does *NOT* use Gunicorn: Since this template was build with the intenti
 ### Installation
 
 Complete installation instructions can be found within the project - `docs/setup.md`.
+# django-ckeditor-azure-template
